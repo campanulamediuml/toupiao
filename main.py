@@ -13,7 +13,7 @@ import os
 
 def good_artical(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[1]/a/div')
     ActionChains(driver).click(good_artical).perform()
@@ -33,7 +33,7 @@ def good_artical(ident):
 
 def good_parter(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[2]/a/div')
     ActionChains(driver).click(good_artical).perform()
@@ -53,7 +53,7 @@ def good_parter(ident):
 
 def good_part(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[3]/a/div')
     ActionChains(driver).click(good_artical).perform()
@@ -73,7 +73,7 @@ def good_part(ident):
 
 def good_movie(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[4]/a/div')
     ActionChains(driver).click(good_artical).perform()
@@ -93,7 +93,7 @@ def good_movie(ident):
 
 def good_case(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[5]/a/div')
     ActionChains(driver).click(good_artical).perform()
@@ -113,7 +113,7 @@ def good_case(ident):
 
 def good_examp(ident):
     
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver')#这里使用Firefox浏览
+    driver = webdriver.Chrome()#这里使用Firefox浏览
     driver.get('http://www.dyejia.cn/ca/2017080401000116.htm')
     good_artical = driver.find_element_by_xpath('//*[@id="data_row4"]/div/ul/li[6]/a/div')
     ActionChains(driver).click(good_artical).perform()
