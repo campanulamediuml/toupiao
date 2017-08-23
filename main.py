@@ -4,7 +4,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
-# from pyvirtualdisplay import Display
+from pyvirtualdisplay import Display
 from selenium import webdriver
 import os
 
@@ -143,21 +143,28 @@ def main(ident):
 
 def auto():
     ident_list = open('ident.txt').readlines()
-    for ident in ident_list:
-        try:
-            main(ident)
-        except Exception,e:
-            print e
-            continue
-    # pool = ThreadPool(10)
-    # pool.map(main,ident_list)
-    # pool.close()
+    # for ident in ident_list:
+    #     try:
+    #         main(ident)
+    #     except Exception,e:
+    #         print e
+    #         continue
+    pool = ThreadPool(10)
+    pool.map(main,ident_list)
+    pool.close()
 
 while 1:
-    # display = Display(visible=0, size=(1920, 1080))
-    # display.start()
-    auto()
-    # display.stop()
+    try:
+        display = Display(visible=0, size=(1920, 1080))
+        display.start()
+        auto()
+        display.stop()
+    except Exception,e:
+        print e 
+        os.system('ps -ef|grep Xvfb|grep -v grep|cut -c 9-15|xargs kill -9')
+        os.system('ps -ef|grep chromedriver|grep -v grep|cut -c 9-15|xargs kill -9')
+        time.sleep(3)
+        continue
 
 # print open('ident.txt').readlines()
 
